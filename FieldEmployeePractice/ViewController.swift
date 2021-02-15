@@ -15,12 +15,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var vcPickerView: UIPickerView!
     @IBOutlet weak var vcImageView: UIImageView!
     @IBAction func vcButton(_ sender: UIButton) {
-        
-        print("go to next page");
+                
     }
     let dataSource = ["Ryu", "Ken"]
+    let describe = Descriptions();
     let imageSource = [ #imageLiteral(resourceName: "ryuImage"), #imageLiteral(resourceName: "kenImage") ]
-
+    let portraitSource = [ #imageLiteral(resourceName: "PngItem_832813"), #imageLiteral(resourceName: "pngwing.com")]
+    
+    var rowIndex = 0;
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1;
     }//number of columns
@@ -30,7 +32,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }//number of rows
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
         switch row {
         case 0:
             vcImageView.image = #imageLiteral(resourceName: "ryuImage")
@@ -45,13 +46,21 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             vcLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 
         }
+        rowIndex = row
         return dataSource[row]
+        
 
     }
-//
-//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//        return NSAttributedString(string: dataSource[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.yellow])
-//    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.destination is SecondViewController)
+            {
+            let vc = segue.destination as? SecondViewController
+            vc?.vc2Image.image = portraitSource[rowIndex]
+            vc?.vc2Label.text = describe.descriptionSource[rowIndex].name
+            vc?.vc2Describe.text = describe.descriptionSource[rowIndex].description
+            }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

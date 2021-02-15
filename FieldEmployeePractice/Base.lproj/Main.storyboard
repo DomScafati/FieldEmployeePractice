@@ -45,6 +45,7 @@
                                 </state>
                                 <connections>
                                     <action selector="vcButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CRh-Yb-oY8"/>
+                                    <segue destination="F0W-kG-XAJ" kind="show" identifier="mySegue" id="IBg-bA-fDO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -62,10 +63,57 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="62.946428571428569"/>
         </scene>
+        <!--Second View Controller-->
+        <scene sceneID="h4j-TD-c0R">
+            <objects>
+                <viewController id="F0W-kG-XAJ" customClass="SecondViewController" customModule="FieldEmployeePractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aMK-vb-45D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2w-f8-9lk">
+                                <rect key="frame" x="180" y="67" width="55" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PngItem_832813" translatesAutoresizingMaskIntoConstraints="NO" id="KMA-nD-gfm">
+                                <rect key="frame" x="87" y="158" width="240" height="217"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OwU-Yg-32g">
+                                <rect key="frame" x="20" y="426" width="374" height="306"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JlS-Rj-o41"/>
+                        <color key="backgroundColor" red="0.7422675659085286" green="1" blue="0.70360798794745705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6D3-ev-iex"/>
+                    <connections>
+                        <outlet property="descriptionBox" destination="OwU-Yg-32g" id="TMY-Ii-Qco"/>
+                        <outlet property="image" destination="KMA-nD-gfm" id="0uA-Tg-DqY"/>
+                        <outlet property="label" destination="w2w-f8-9lk" id="nxM-0M-zZk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UrZ-ts-0CK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850.72463768115949" y="67.633928571428569"/>
+        </scene>
     </scenes>
     <resources>
         <image name="797188" width="854" height="1590"/>
+        <image name="PngItem_832813" width="716" height="776"/>
         <image name="ryuImage" width="512" height="512"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
